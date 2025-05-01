@@ -109,7 +109,7 @@ const HomePage = () => {
                 overflow="hidden"
               >
                 <Image
-                  src="/images/me.jpg"
+                  src="/portfolio/images/me.jpg"
                   alt="Yoann Sabatier"
                   borderRadius="full"
                 />

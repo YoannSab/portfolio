@@ -63,7 +63,7 @@ const ProjectCard = ({ project }) => {
     >
       <Box position="relative">
         <Image
-          src={imageUrl}
+          src={`/portfolio/${imageUrl}`}
           alt={title}
           // height="300px"
           // width="100%"

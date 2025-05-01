@@ -12,10 +12,8 @@ import {
   Tag,
   TagLabel,
   Stack,
-  Icon,
   useColorModeValue,
   Divider,
-  IconButton,
 } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa';
@@ -108,13 +106,12 @@ const ProjectDetailPage = () => {
           >
             <Box position="relative" borderRadius="xl" overflow="hidden" boxShadow="xl">
               <Image
-                src={imageUrl || '/images/placeholder.jpg'}
+                src={`/portfolio/${imageUrl}`}
                 alt={title}
                 w="100%"
                 h="auto"
                 maxH="500px"
                 objectFit="cover"
-                fallbackSrc="https://via.placeholder.com/800x500?text=Projet"
               />
               <Flex
                 position="absolute"
@@ -230,13 +227,12 @@ const ProjectDetailPage = () => {
             </Text>
 
             {project.screenshots && project.screenshots.length > 0 ? (
-              <SimpleGrid columns={{ base: 1, md: project.screenshots.length > 1 ? 2 : 1 }} spacing={6}>
+              <SimpleGrid columns={1} spacing={6}>
                 {project.screenshots.map((screenshot, index) => (
                   <Box key={index} borderRadius="md" overflow="hidden" boxShadow="md">
                     <Image
-                      src={screenshot}
+                      src={`/portfolio/${screenshot}`}
                       alt={`${title} screenshot ${index + 1}`}
-                      fallbackSrc={`https://via.placeholder.com/600x400?text=${title}+Screenshot+${index + 1}`}
                     />
                   </Box>
                 ))}
