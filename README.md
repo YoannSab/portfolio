@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Portfolio de Yoann Sabatier
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet est un portfolio personnel présentant mes compétences, projets et expériences en tant que développeur web et data scientist.
 
-## Available Scripts
+## 🚀 Technologies utilisées
 
-In the project directory, you can run:
+- **React** - Framework JavaScript pour la construction de l'interface utilisateur
+- **Chakra UI** - Bibliothèque de composants UI pour React
+- **React Router** - Gestion des routes et de la navigation
+- **Framer Motion** - Animations et transitions fluides
+- **GitHub Pages** - Hébergement du site
 
-### `npm start`
+## ✨ Fonctionnalités
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Design responsive** - S'adapte à tous les appareils (mobile, tablette, desktop)
+- **Mode sombre/clair** - Thème adaptable aux préférences de l'utilisateur
+- **Animations** - Interactions visuelles pour une meilleure expérience utilisateur
+- **Présentation des projets** - Showcase pour mettre en valeur mon travail
+- **Filtrage des projets** - Par technologies, type de projet, etc.
+- **Formulaire de contact** - Pour me contacter directement depuis le site
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Installation et démarrage
 
-### `npm test`
+1. Cloner le dépôt
+   ```
+   git clone https://github.com/YoannSab/portfolio.git
+   cd portfolio
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Installer les dépendances
+   ```
+   npm install
+   ```
 
-### `npm run build`
+3. Lancer l'application en mode développement
+   ```
+   npm start
+   ```
+   L'application sera accessible à l'adresse [http://localhost:3000](http://localhost:3000)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Déploiement
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Pour déployer l'application sur GitHub Pages :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm run deploy
+```
 
-### `npm run eject`
+Cette commande génère une version optimisée de l'application et la déploie sur la branche gh-pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Structure du projet
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+portfolio/
+├── public/            # Ressources statiques (images, favicon, etc.)
+├── src/
+│   ├── assets/        # Ressources utilisées dans l'application
+│   ├── components/    # Composants réutilisables
+│   ├── data/          # Données des projets et du CV
+│   ├── pages/         # Composants de pages
+│   ├── App.js         # Composant principal et routage
+│   ├── index.js       # Point d'entrée de l'application
+│   └── theme.js       # Configuration du thème Chakra UI
+└── ...
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔄 Ajouter ou modifier des projets
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Pour ajouter ou modifier des projets, éditer le fichier `src/data/projectsData.js`.
+Pour ajouter des images de projets, les placer dans le dossier `public/images/` et référencer leur chemin dans les données du projet.
 
-## Learn More
+## 👤 Auteur
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Yoann Sabatier Montanaro**
+- LinkedIn: [Yoann Sabatier Montanaro](https://www.linkedin.com/in/yoann-sabatier-montanaro/)
+- GitHub: [YoannSab](https://github.com/YoannSab)
