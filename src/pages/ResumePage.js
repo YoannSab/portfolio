@@ -110,7 +110,6 @@ const ResumePage = () => {
           </HStack>
         </Box>
 
-        {/* Experience Section */}
         <Box mb={12}>
           <Flex align="center" mb={8}>
             <Icon as={FaBriefcase} w={8} h={8} color="brand.500" mr={4} />
@@ -157,11 +156,13 @@ const ResumePage = () => {
                 </Flex>
                 <Text mb={4}>{exp.description}</Text>
                 {exp.website && (
-                  <Text mb={4}>
-                    <Box as="a" href={exp.website} target="_blank" color="brand.500">
-                      {exp.website}
-                    </Box>
-                  </Text>
+                  <VStack align="flex-start" mb={4} spacing={2}>
+                    {exp.website.map((link, linkIndex) => (
+                      <Box as="a" key={linkIndex} href={link} target="_blank" color="brand.500">
+                        {link}
+                      </Box>
+                    ))}
+                  </VStack>
                 )}
                 <Flex flexWrap="wrap" gap={2}>
                   {exp.technologies && exp.technologies.map((tech, techIndex) => (
@@ -274,7 +275,13 @@ const ResumePage = () => {
                       {activity.period}
                     </Text>
                   </Flex>
-                  <Text mb={4}>{activity.description}</Text>
+                  {activity.description && (
+                    activity.description.split('\n').map((line, lineIndex) => (
+                      <Text key={lineIndex} mb={2}>
+                        {line}
+                      </Text>
+                    ))
+                  )}
                   {activity.link && (
                     <Text mb={4}>
                       <Box as="a" href={activity.link} target="_blank" color="brand.500">

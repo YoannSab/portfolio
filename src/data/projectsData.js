@@ -3,7 +3,7 @@ const projectsData = [
     id: 1,
     title: "Paroldle",
     description: "Un jeu de devinettes de paroles de chansons inspiré par Wordle, développé en ReactJS.",
-    technologies: ["JavaScript", "React.js", "HTML", "CSS"],
+    technologies: ["JavaScript", "React.js"],
     imageUrl: "/images/paroldle.png",
     screenshots: [
       "/images/paroldle_screenshot1.png",
@@ -19,7 +19,7 @@ const projectsData = [
     id: 2,
     title: "Bibou Bot",
     description: "Un bot Twitch développé en JavaScript permettant l'interaction avec le chat et l'affichage d'informations sur League of Legends.",
-    technologies: ["JavaScript", "Node.js", "Twitch API", "Riot Games API"],
+    technologies: ["JavaScript", "Node.js", "Rest API"],
     imageUrl: "/images/biboubot.png",
     githubUrl: "https://github.com/YoannSab/bibou_bot",
     featured: true,
@@ -31,19 +31,19 @@ const projectsData = [
     id: 3,
     title: "Face Clustering",
     description: "Projet d'analyse et de regroupement de visages utilisant des techniques de machine learning.",
-    technologies: ["Python", "Jupyter Notebook", "Machine Learning", "Computer Vision"],
+    technologies: ["Python", "Deep Learning", "Computer Vision"],
     imageUrl: "/images/face_clustering.png",
     githubUrl: "https://github.com/YoannSab/face_clustering",
     featured: true,
     projectType: "Projet Perso",
     year: 2023,
-    details: "Ce projet utilise des techniques avancées de machine learning pour détecter, extraire et regrouper automatiquement des visages dans une collection d'images. L'application utilise des algorithmes de clustering pour organiser les visages similaires ensemble, facilitant ainsi la gestion et l'organisation de grandes collections de photos. Développé avec Python et diverses bibliothèques de vision par ordinateur."
+    details: "Ce projet (pas tout à fait abouti) utilise des techniques avancées de machine learning pour détecter, extraire et regrouper automatiquement des visages dans une collection d'images. L'application utilise des algorithmes de clustering pour organiser les visages similaires ensemble, facilitant ainsi la gestion et l'organisation de grandes collections de photos. Développé avec Python et diverses bibliothèques de vision par ordinateur."
   },
   {
     id: 4,
     title: "Seahorse",
-    description: "Framework Python pour la construction d'agent intelligent pour jeux de société.",
-    technologies: ["Python", "IA"],
+    description: "Framework Python pour la création d'agent intelligent pour jeux de société.",
+    technologies: ["Python"],
     imageUrl: "/images/seahorse.png",
     githubUrl: "https://github.com/corail-research/seahorse",
     liveUrl: "https://corail-research.github.io/seahorse/",
@@ -95,7 +95,7 @@ const projectsData = [
       "/images/gustave_screenshot2.png",
     ],
     githubUrl: "https://github.com/MatheoJ/GustaveTheGhost",
-    liveUrl: "https://matheo-j.itch.io/gustavetheghost",
+    liveUrl: "https://matheoj.github.io/GustaveTheGhostOnline/",
     contribution: true,
     projectType: "Projet Scolaire",
     year: 2023,
@@ -105,7 +105,7 @@ const projectsData = [
     id: 8,
     title: "Deliverif",
     description: "Application interactive pour faciliter les livreurs dans leurs courses avec calcul de tournées et itinéraires optimisés.",
-    technologies: ["Java", "Maven", "JavaFX"],
+    technologies: ["Java"],
     imageUrl: "/images/deliverif.png",
     screenshots: [
       "/images/deliverif_screenshot1.png",
@@ -120,7 +120,7 @@ const projectsData = [
     id: 9,
     title: "Brain Atlas",
     description: "Librairie Python pour le recalage d'images de cerveau de souris basé sur l'Allen Brain Atlas.",
-    technologies: ["Python", "Traitement d'Image", "Segmentation", "Jupyter Notebook"],
+    technologies: ["Python", "Computer Vision"],
     imageUrl: "/images/brainatlas.png",
     screenshots: [
       "/images/brainatlas_screenshot1.png",
@@ -165,7 +165,7 @@ const projectsData = [
     id: 12,
     title: "PolyPwn",
     description: "Création de 8 challenges de programmation, stéganographie et IA pour le PolyPwnCTF de Polytechnique Montréal.",
-    technologies: ["Cybersécurité", "Python", "IA", "DBscan"],
+    technologies: ["Cybersécurité", "Python"],
     imageUrl: "/images/polypwn.png",
     githubUrl: "https://github.com/polycyber/PolyPwnCTF-2025-Challenges",
     projectType: "Projet Perso",
@@ -177,7 +177,7 @@ const projectsData = [
     id: 13,
     title: "Conv Fighter",
     description: "Petit jeu de plateforme développé avec Pygame pour s'initier à Python.",
-    technologies: ["Python", "Pygame"],
+    technologies: ["Python"],
     imageUrl: "/images/convfighter.png",
     screenshots: [
       "/images/convfighter_screenshot1.png",
@@ -185,13 +185,13 @@ const projectsData = [
     githubUrl: "https://github.com/YoannSab/ConvFighter",
     projectType: "Projet Perso",
     year: 2021,
-    details: "Conv Fighter est un petit jeu de plateforme développé avec la bibliothèque Pygame. Ce projet a été réalisé dans le but de s'initier au langage Python et d'explorer les bases du développement de jeux 2D."
+    details: "Conv Fighter est un petit jeu de plateforme développé avec la bibliothèque Pygame. Ce projet a été réalisé dans le but d'apprendre en autodidacte le langage Python et de se familiariser avec la création de jeux vidéo. Le jeu propose des mécaniques simples et un design minimaliste, tout en offrant une expérience ludique."
   },
   {
     id: 14,
     title: "Déformation Élastique",
     description: "Simulation numérique d'une lame élastique soumise à son poids, des forces d'extrémité et des formes réparties.",
-    technologies: ["MATLAB", "Simulation Numérique", "Newton-Raphson"],
+    technologies: ["MATLAB", "Simulation Numérique"],
     imageUrl: "/images/deformation.png",
     screenshots: [
       "/images/deformation_screenshot1.png",
@@ -201,6 +201,21 @@ const projectsData = [
     projectType: "Projet Scolaire",
     year: 2021,
     details: "Ce projet consiste en une simulation numérique d'une lame élastique soumise à diverses forces. La méthode de Newton-Raphson a été implémentée pour résoudre les équations différentielles décrivant le comportement de la lame. Réalisé avec MATLAB dans le cadre d'un projet scolaire."
+  },
+  {
+    id: 15,
+    title: "Lancer de balle",
+    description: "Simulation d'un lancer de balle avec prise en compte de la résistance de l'air.",
+    technologies: ["Java", "Simulation Numérique"],
+    year: 2021,
+    githubUrl: "https://github.com/YoannSab/LancerBalle",
+    imageUrl: "/images/lancerballe.png",
+    screenshots: [
+      "/images/lancerballe_screenshot1.png",
+    ],
+    contribution: true,
+    projectType: "Projet Scolaire",
+    details: "Ce projet consiste en la simulation d'un lancer de balle (tennis, ping-pong, etc.) dans différents environnements (sur Terre, sur la Lune, dans l'eau, etc.) et avec différentes conditions (angle de lancement, vitesse initiale, etc.). La simulation prend en compte la résistance de l'air et d'autres forces pour modéliser le mouvement de la balle. Réalisé avec Java dans le cadre d'un projet scolaire."
   }
 ];
 

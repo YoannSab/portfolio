@@ -23,12 +23,12 @@ const resumeData = {
   ],
   experience: [
     {
-      position: "Développeur Full Stack",
+      position: "Développeur Full Stack & IA",
       company: "onepoint",
-      location: "Montréal, QC",
-      period: "Avril 2025 – Juillet 2025 (prévisionnel)",
-      description: "Utilisation des méthodes agiles afin de mener à bien un projet d'ingénierie logicielle",
-      technologies: ["Développement Agile"]
+      location: "Paris, QC",
+      period: "Avril 2025 – Juillet 2025",
+      description: "Développement d'une application web pour la gestion des CV et des candidatures, intégration d'un LLM pour analyser les CV. Développement de serveurs MCP (Model Control Protocol) pour un projet interne.",
+      technologies: ["Typescript", "Next.js", "MCP", "LLM"]
     },
     {
       position: "Assistant d'Enseignement",
@@ -36,7 +36,8 @@ const resumeData = {
       location: "Montréal, QC",
       period: "Août 2024 – Février 2025",
       description: "Enseignement des laboratoires du cours INF8175 : Introduction à l'IA aux étudiants de Bac, Maîtrise et Doctorat.",
-      technologies: ["IA", "Pédagogie"]
+      technologies: ["IA", "Pédagogie"],
+      website: ["https://www.polymtl.ca/programmes/cours/intelligence-artif-methodes-et-algorithmes-0"]
     },
     {
       position: "Étudiant en Maîtrise de Recherche",
@@ -44,7 +45,8 @@ const resumeData = {
       location: "Montréal, QC",
       period: "Janvier 2024 – Avril 2025",
       description: "Premier auteur d'une publication proposée à CPAIOR 2025. Développement d'une nouvelle formulation de graphe pour le Problème de Planification des Véhicules Électriques à Dépôts Multiples, intégrant des opportunités de recharge pré-sélectionnées pour améliorer la planification des bus électriques.",
-      technologies: ["Recherche Opérationnelle", "Optimisation"]
+      technologies: ["Recherche Opérationnelle", "Optimisation"],
+      website: ["https://corail-research.github.io", "https://sites.google.com/view/cpaior2025"]
     },
     {
       position: "Développement d'un site de compétitions d'IA pour étudiants",
@@ -53,7 +55,7 @@ const resumeData = {
       period: "Mai 2024 – Septembre 2024",
       description: "Plateforme web utilisée par plus de 200 étudiants, permettant aux agents intelligents (Minimax, MCTS) de s'affronter dans des jeux de plateau avec un système de classement intégré.",
       technologies: ["IA", "Développement Web"],
-      website: "https://abyss-a24.corail-lab.ca"
+      website: ["https://abyss-a24.corail-lab.ca"]
     },
     {
       position: "Stagiaire Data Scientist",
@@ -68,8 +70,8 @@ const resumeData = {
       company: "Inria Lyon, Equipe Beagle",
       location: "Lyon, France",
       period: "Juin - Août 2022",
-      description: "Traitement, analyse et enregistrement d'images 2D et 3D de cerveaux de souris en utilisant Python. Utilisation de l'atlas cérébral Allen pour segmenter les régions du cerveau. Développement d'une bibliothèque Python dédiée.",
-      technologies: ["Python", "Traitement d'images", "Développement logiciel"]
+      description: "Traitement, analyse et recalage d'images 2D et 3D de cerveaux de souris en utilisant Python. Utilisation de l'atlas cérébral Allen pour segmenter les régions du cerveau. Développement d'une bibliothèque Python dédiée.",
+      technologies: ["Python", "Traitement d'images"]
     }
   ],
   activities: [
@@ -77,14 +79,14 @@ const resumeData = {
       role: "Vice-Président en charge de la communication",
       organization: "PolyCyber",
       period: "Août 2024 – Janvier 2025",
-      description: "Promotion des événements à venir sur les réseaux sociaux. Maintenance du site web https://polycyber.io",
+      description: "Promotion des événements à venir sur les réseaux sociaux.",
       link: "https://polycyber.io"
     },
     {
       role: "Participation à des événements de cybersécurité (Capture the Flag)",
-      organization: "",
+      organization: "PolyCyber",
       period: "2024-2025",
-      description: "Hackfest CTF (Plus grand événement de cybersécurité au Canada) : Classé 4th /40. United CTF (CTF étudiant base à Montréal) : Classé 4th / 400"
+      description: "Hackfest CTF (Plus grand événement de cybersécurité au Canada) : Classé 4e /40. \n United CTF (CTF étudiant basé à Montréal) : Classé 4e / 400 \n NorthSec : Classé 5e / 80+",
     }
   ],
   projectsRedirect: {
