@@ -18,19 +18,30 @@ import {
   Tag,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaDownload, FaBriefcase, FaGraduationCap, FaCheckCircle, FaAward, FaCode, FaUsers } from 'react-icons/fa';
+import { FaDownload, FaBriefcase, FaGraduationCap, FaCheckCircle, FaAward, FaCode, FaUsers, FaBook } from 'react-icons/fa';
 import resumeData from '../data/resumeData';
 import { Link } from 'react-router-dom';
+import { useLanguage, pick } from '../i18n/LanguageContext';
 
 const MotionBox = motion(Box);
 
 const ResumePage = () => {
+  const { t, language } = useLanguage();
   const bgColor = useColorModeValue('white', 'gray.700');
   const borderColor = useColorModeValue('gray.200', 'gray.600');
   const textColor = useColorModeValue('gray.600', 'gray.400');
   const experienceTextColor = useColorModeValue('gray.600', 'gray.400');
   const educationTextColor = useColorModeValue('gray.600', 'gray.400');
   const certificationTextColor = useColorModeValue('gray.600', 'gray.400');
+
+  const downloadCv = (fileName, downloadName) => {
+    const link = document.createElement('a');
+    link.href = `${process.env.PUBLIC_URL}/${fileName}`;
+    link.download = downloadName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Box pt="100px" pb="50px">
@@ -42,29 +53,32 @@ const ResumePage = () => {
             transition={{ duration: 0.5 }}
           >
             <Heading as="h1" size="2xl" mb={2}>
-              Curriculum Vitae
+              {t('resume.title')}
             </Heading>
             <Text fontSize="xl" color={textColor}>
-              Mon parcours professionnel et académique
+              {t('resume.subtitle')}
             </Text>
           </MotionBox>
 
-          <Button
-            leftIcon={<FaDownload />}
-            colorScheme="brand"
-            size="lg"
-            onClick={() => {
-              // Créer un lien invisible et déclencher le téléchargement
-              const link = document.createElement('a');
-              link.href = '/CV.pdf';
-              link.download = 'Yoann_Sabatier_Montanaro_CV.pdf';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
-          >
-            Télécharger CV
-          </Button>
+          <HStack spacing={3} flexWrap="wrap">
+            <Button
+              leftIcon={<FaDownload />}
+              colorScheme="brand"
+              size="lg"
+              onClick={() => downloadCv('cv_fr_2026.pdf', 'Yoann_Sabatier_Montanaro_CV_FR.pdf')}
+            >
+              {t('resume.downloadFr')}
+            </Button>
+            <Button
+              leftIcon={<FaDownload />}
+              colorScheme="brand"
+              variant="outline"
+              size="lg"
+              onClick={() => downloadCv('cv_en_2026.pdf', 'Yoann_Sabatier_Montanaro_CV_EN.pdf')}
+            >
+              {t('resume.downloadEn')}
+            </Button>
+          </HStack>
         </Flex>
 
         {/* Personal Information */}
@@ -81,27 +95,27 @@ const ResumePage = () => {
             {resumeData.name}
           </Heading>
           <Text fontSize="xl" fontWeight="medium" color="brand.500" mb={6}>
-            {resumeData.title}
+            {pick(resumeData.title, language)}
           </Text>
           <Text fontSize="lg" mb={4}>
-            {resumeData.summary}
+            {pick(resumeData.summary, language)}
           </Text>
           <HStack spacing={4} flexWrap="wrap">
             <Text>
-              <strong>Email:</strong>{' '}
+              <strong>{t('resume.emailLabel')}:</strong>{' '}
               <Box as="a" href={`mailto:${resumeData.email}`} color="brand.500">
                 {resumeData.email}
               </Box>
             </Text>
             <Text>
-              <strong>LinkedIn:</strong>{' '}
+              <strong>{t('resume.linkedinLabel')}:</strong>{' '}
               <Box as="a" href={resumeData.linkedin} target="_blank" color="brand.500">
-                Profil LinkedIn
+                {t('resume.linkedinText')}
               </Box>
             </Text>
             {resumeData.github && (
               <Text>
-                <strong>GitHub:</strong>{' '}
+                <strong>{t('resume.githubLabel')}:</strong>{' '}
                 <Box as="a" href={`https://github.com/${resumeData.github}`} target="_blank" color="brand.500">
                   {resumeData.github}
                 </Box>
@@ -114,7 +128,7 @@ const ResumePage = () => {
           <Flex align="center" mb={8}>
             <Icon as={FaBriefcase} w={8} h={8} color="brand.500" mr={4} />
             <Heading as="h2" size="lg">
-              Expérience Professionnelle
+              {t('resume.experienceTitle')}
             </Heading>
           </Flex>
 
@@ -140,10 +154,10 @@ const ResumePage = () => {
                 >
                   <Box>
                     <Heading as="h3" size="md">
-                      {exp.position}
+                      {pick(exp.position, language)}
                     </Heading>
                     <Text fontWeight="bold" color="brand.500">
-                      {exp.company}, {exp.location}
+                      {exp.company}, {pick(exp.location, language)}
                     </Text>
                   </Box>
                   <Text
@@ -151,10 +165,10 @@ const ResumePage = () => {
                     color={experienceTextColor}
                     mt={{ base: 2, md: 0 }}
                   >
-                    {exp.period}
+                    {pick(exp.period, language)}
                   </Text>
                 </Flex>
-                <Text mb={4}>{exp.description}</Text>
+                <Text mb={4}>{pick(exp.description, language)}</Text>
                 {exp.website && (
                   <VStack align="flex-start" mb={4} spacing={2}>
                     {exp.website.map((link, linkIndex) => (
@@ -181,7 +195,7 @@ const ResumePage = () => {
           <Flex align="center" mb={8}>
             <Icon as={FaGraduationCap} w={8} h={8} color="brand.500" mr={4} />
             <Heading as="h2" size="lg">
-              Formation
+              {t('resume.educationTitle')}
             </Heading>
           </Flex>
 
@@ -207,10 +221,10 @@ const ResumePage = () => {
                 >
                   <Box>
                     <Heading as="h3" size="md">
-                      {edu.degree}
+                      {pick(edu.degree, language)}
                     </Heading>
                     <Text fontWeight="bold" color="brand.500">
-                      {edu.institution}, {edu.location}
+                      {edu.institution}, {pick(edu.location, language)}
                     </Text>
                   </Box>
                   <Text
@@ -221,11 +235,52 @@ const ResumePage = () => {
                     {edu.period}
                   </Text>
                 </Flex>
-                <Text>{edu.description}</Text>
+                <Text>{pick(edu.description, language)}</Text>
               </MotionBox>
             ))}
           </VStack>
         </Box>
+
+        {/* Publications Section */}
+        {resumeData.publications && resumeData.publications.length > 0 && (
+          <Box mb={12}>
+            <Flex align="center" mb={8}>
+              <Icon as={FaBook} w={8} h={8} color="brand.500" mr={4} />
+              <Heading as="h2" size="lg">
+                {t('resume.publicationsTitle')}
+              </Heading>
+            </Flex>
+
+            <VStack spacing={6} align="stretch">
+              {resumeData.publications.map((pub, index) => (
+                <MotionBox
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  bg={bgColor}
+                  p={6}
+                  borderRadius="md"
+                  boxShadow="md"
+                  borderLeft="4px solid"
+                  borderColor="brand.500"
+                >
+                  <Text fontWeight="medium" mb={2}>
+                    {pick(pub.citation, language)}
+                  </Text>
+                  <Text color={textColor} mb={pub.link ? 4 : 0}>
+                    {pick(pub.description, language)}
+                  </Text>
+                  {pub.link && (
+                    <Box as="a" href={pub.link} target="_blank" color="brand.500">
+                      {pub.link}
+                    </Box>
+                  )}
+                </MotionBox>
+              ))}
+            </VStack>
+          </Box>
+        )}
 
         {/* Activities Section */}
         {resumeData.activities && (
@@ -233,7 +288,7 @@ const ResumePage = () => {
             <Flex align="center" mb={8}>
               <Icon as={FaUsers} w={8} h={8} color="brand.500" mr={4} />
               <Heading as="h2" size="lg">
-                Activités Extrascolaires
+                {t('resume.activitiesTitle')}
               </Heading>
             </Flex>
 
@@ -259,7 +314,7 @@ const ResumePage = () => {
                   >
                     <Box>
                       <Heading as="h3" size="md">
-                        {activity.role}
+                        {pick(activity.role, language)}
                       </Heading>
                       {activity.organization && (
                         <Text fontWeight="bold" color="brand.500">
@@ -272,11 +327,11 @@ const ResumePage = () => {
                       color={experienceTextColor}
                       mt={{ base: 2, md: 0 }}
                     >
-                      {activity.period}
+                      {pick(activity.period, language)}
                     </Text>
                   </Flex>
                   {activity.description && (
-                    activity.description.split('\n').map((line, lineIndex) => (
+                    pick(activity.description, language).split('\n').map((line, lineIndex) => (
                       <Text key={lineIndex} mb={2}>
                         {line}
                       </Text>
@@ -300,7 +355,7 @@ const ResumePage = () => {
           <Flex align="center" mb={8}>
             <Icon as={FaCode} w={8} h={8} color="brand.500" mr={4} />
             <Heading as="h2" size="lg">
-              Projets
+              {t('resume.projectsTitle')}
             </Heading>
           </Flex>
 
@@ -315,7 +370,7 @@ const ResumePage = () => {
             borderLeft="4px solid"
             borderColor="brand.500"
           >
-            <Text fontSize="lg" mb={4}>{resumeData.projectsRedirect.message}</Text>
+            <Text fontSize="lg" mb={4}>{pick(resumeData.projectsRedirect.message, language)}</Text>
             <Button
               as={Link}
               to={resumeData.projectsRedirect.path}
@@ -323,7 +378,7 @@ const ResumePage = () => {
               colorScheme="brand"
               size="md"
             >
-              Voir mes projets
+              {t('resume.viewProjects')}
             </Button>
           </MotionBox>
         </Box>
@@ -335,7 +390,7 @@ const ResumePage = () => {
             <Flex align="center" mb={8}>
               <Icon as={FaCheckCircle} w={8} h={8} color="brand.500" mr={4} />
               <Heading as="h2" size="lg">
-                Compétences
+                {t('resume.skillsTitle')}
               </Heading>
             </Flex>
 
@@ -348,7 +403,7 @@ const ResumePage = () => {
               borderColor="brand.500"
             >
               <Heading as="h3" size="md" mb={4}>
-                Compétences Techniques
+                {t('resume.technicalSkills')}
               </Heading>
               <List spacing={3} mb={6}>
                 {resumeData.skills.technical.map((skill, index) => (
@@ -362,13 +417,13 @@ const ResumePage = () => {
               <Divider my={6} />
 
               <Heading as="h3" size="md" mb={4}>
-                Langues
+                {t('resume.languagesTitle')}
               </Heading>
               <List spacing={3} mb={6}>
                 {resumeData.skills.languages.map((lang, index) => (
                   <ListItem key={index}>
                     <ListIcon as={FaCheckCircle} color="brand.500" />
-                    {lang.name} ({lang.level})
+                    {pick(lang.name, language)} ({pick(lang.level, language)})
                   </ListItem>
                 ))}
               </List>
@@ -377,13 +432,13 @@ const ResumePage = () => {
                 <>
                   <Divider my={6} />
                   <Heading as="h3" size="md" mb={4}>
-                    Centres d'intérêt
+                    {t('resume.interestsTitle')}
                   </Heading>
                   <List spacing={3}>
                     {resumeData.skills.interests.map((interest, index) => (
                       <ListItem key={index}>
                         <ListIcon as={FaCheckCircle} color="brand.500" />
-                        {interest}
+                        {pick(interest, language)}
                       </ListItem>
                     ))}
                   </List>
@@ -397,7 +452,7 @@ const ResumePage = () => {
             <Flex align="center" mb={8}>
               <Icon as={FaAward} w={8} h={8} color="brand.500" mr={4} />
               <Heading as="h2" size="lg">
-                Certifications
+                {t('resume.certificationsTitle')}
               </Heading>
             </Flex>
 
@@ -415,7 +470,7 @@ const ResumePage = () => {
                   {resumeData.certifications.map((cert, index) => (
                     <Box key={index} p={4} borderRadius="md" border="1px solid" borderColor={borderColor}>
                       <Heading as="h3" size="sm" mb={2}>
-                        {cert.name}
+                        {pick(cert.name, language)}
                       </Heading>
                       <Flex justify="space-between" flexWrap="wrap">
                         <Text fontWeight="medium" color="brand.500">
@@ -427,14 +482,14 @@ const ResumePage = () => {
                       </Flex>
                       {cert.description && (
                         <Text fontSize="sm" mt={2} color={textColor}>
-                          {cert.description}
+                          {pick(cert.description, language)}
                         </Text>
                       )}
                     </Box>
                   ))}
                 </VStack>
               ) : (
-                <Text>Aucune certification disponible pour le moment.</Text>
+                <Text>{t('resume.noCertifications')}</Text>
               )}
             </Box>
           </Box>

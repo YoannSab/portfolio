@@ -15,10 +15,12 @@ import {
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaLock, FaCalendarAlt } from 'react-icons/fa';
+import { useLanguage, pick } from '../i18n/LanguageContext';
 
 const MotionBox = motion(Box);
 
 const ProjectCard = ({ project }) => {
+  const { t, language } = useLanguage();
   const {
     id,
     title,
@@ -39,9 +41,9 @@ const ProjectCard = ({ project }) => {
   // Détermine la couleur du badge en fonction du type de projet
   const getProjectTypeColor = (type) => {
     switch(type) {
-      case 'Projet Perso': return 'green';
-      case 'Projet Scolaire': return 'blue';
-      case 'Projet Pro': return 'orange';
+      case 'personal': return 'green';
+      case 'school': return 'blue';
+      case 'professional': return 'orange';
       default: return 'gray';
     }
   };
@@ -79,17 +81,17 @@ const ProjectCard = ({ project }) => {
 
           {projectType && (
             <Badge colorScheme={getProjectTypeColor(projectType)} variant="solid" fontSize="0.8em" px={2} py={1}>
-              {projectType}
+              {t(`projectTypes.${projectType}`)}
             </Badge>
           )}
           {contribution && (
             <Badge colorScheme="purple" variant="solid" fontSize="0.8em" px={2} py={1}>
-              Contribution
+              {t('projectCard.contribution')}
             </Badge>
           )}
           {isPrivate && (
             <Badge colorScheme="red" variant="solid" fontSize="0.8em" px={2} py={1}>
-              Privé
+              {t('projectCard.private')}
             </Badge>
           )}
         </Flex>
@@ -101,7 +103,7 @@ const ProjectCard = ({ project }) => {
         </Heading>
 
         <Text fontSize="md" mb={4} flexGrow={1}>
-          {description}
+          {pick(description, language)}
         </Text>
 
         <Wrap spacing={2} mb={4}>

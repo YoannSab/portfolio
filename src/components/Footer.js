@@ -10,8 +10,10 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   // Define color values at the component level, not inside conditional or callback functions
   const bgColor = useColorModeValue('gray.50', 'gray.900');
   const textColor = useColorModeValue('gray.700', 'gray.200');
@@ -42,9 +44,9 @@ const Footer = () => {
           YSM
         </Text>
         <Stack direction={'row'} spacing={6}>
-          <Link href={'/'}>Accueil</Link>
-          <Link href={'/projects'}>Projets</Link>
-          <Link href={'/resume'}>CV</Link>
+          <Link href={'#/'}>{t('nav.home')}</Link>
+          <Link href={'#/projects'}>{t('nav.projects')}</Link>
+          <Link href={'#/resume'}>{t('nav.resume')}</Link>
         </Stack>
       </Container>
 
@@ -58,7 +60,7 @@ const Footer = () => {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© {new Date().getFullYear()} Yoann Sabatier. Tous droits réservés</Text>
+          <Text>© {new Date().getFullYear()} Yoann Sabatier. {t('footer.rights')}</Text>
           <Flex justify="center" align="center" gap={4}>
             <IconButton
               aria-label="GitHub"

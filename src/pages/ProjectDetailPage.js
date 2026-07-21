@@ -19,10 +19,12 @@ import { ArrowBackIcon } from '@chakra-ui/icons';
 import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import projectsData from '../data/projectsData';
+import { useLanguage, pick } from '../i18n/LanguageContext';
 
 const MotionBox = motion(Box);
 
 const ProjectDetailPage = () => {
+  const { t, language } = useLanguage();
   const { id } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
@@ -50,14 +52,14 @@ const ProjectDetailPage = () => {
     return (
       <Box pt="100px" pb="50px">
         <Container maxW="container.xl" textAlign="center">
-          <Heading mb={4}>Projet non trouvé</Heading>
-          <Text mb={6}>Le projet que vous recherchez n'existe pas.</Text>
+          <Heading mb={4}>{t('projectDetail.notFoundTitle')}</Heading>
+          <Text mb={6}>{t('projectDetail.notFoundText')}</Text>
           <Button
             onClick={() => navigate('/projects')}
             colorScheme="brand"
             leftIcon={<ArrowBackIcon />}
           >
-            Retour aux projets
+            {t('projectDetail.back')}
           </Button>
         </Container>
       </Box>
@@ -68,7 +70,7 @@ const ProjectDetailPage = () => {
     return (
       <Box pt="100px" pb="50px">
         <Container maxW="container.xl" textAlign="center">
-          <Heading>Chargement...</Heading>
+          <Heading>{t('projectDetail.loading')}</Heading>
         </Container>
       </Box>
     );
@@ -95,7 +97,7 @@ const ProjectDetailPage = () => {
           onClick={() => navigate('/projects')}
           variant="ghost"
         >
-          Retour aux projets
+          {t('projectDetail.back')}
         </Button>
 
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10}>
@@ -119,16 +121,20 @@ const ProjectDetailPage = () => {
                 right={4}
                 gap={2}
               >
+                {/* <Tag colorScheme="blue" variant="solid" size="lg">
+                  <TagLabel>{technologies.join(', ')}</TagLabel> */}
                 {contribution && (
                   <Tag colorScheme="purple" variant="solid" size="lg">
-                    <TagLabel>Contribution</TagLabel>
+                    <TagLabel>{t('projectCard.contribution')}</TagLabel>
                   </Tag>
                 )}
                 {isPrivate && (
                   <Tag colorScheme="red" variant="solid" size="lg">
-                    <TagLabel>Privé</TagLabel>
+                    <TagLabel>{t('projectCard.private')}</TagLabel>
                   </Tag>
                 )}
+                
+
               </Flex>
             </Box>
           </MotionBox>
@@ -142,7 +148,7 @@ const ProjectDetailPage = () => {
               {title}
             </Heading>
             <Text fontSize="xl" color={textColor} mb={6}>
-              {description}
+              {pick(description, language)}
             </Text>
 
             <Stack direction="row" mb={6} flexWrap="wrap" gap={2}>
@@ -167,7 +173,7 @@ const ProjectDetailPage = () => {
                   onClick={() => window.open(githubUrl, '_blank')}
                   colorScheme="gray"
                 >
-                  Code Source
+                  {t('projectDetail.sourceCode')}
                 </Button>
               )}
               {liveUrl && (
@@ -176,7 +182,7 @@ const ProjectDetailPage = () => {
                   onClick={() => window.open(liveUrl, '_blank')}
                   colorScheme="brand"
                 >
-                  Démo Live
+                  {t('projectDetail.liveDemo')}
                 </Button>
               )}
               {isPrivate && !liveUrl && (
@@ -185,7 +191,7 @@ const ProjectDetailPage = () => {
                   isDisabled
                   colorScheme="gray"
                 >
-                  Projet Privé
+                  {t('projectDetail.privateProject')}
                 </Button>
               )}
             </Flex>
@@ -196,14 +202,14 @@ const ProjectDetailPage = () => {
 
         <Box>
           <Heading as="h2" size="xl" mb={6}>
-            À propos du projet
+            {t('projectDetail.aboutTitle')}
           </Heading>
           <Text
             fontSize="lg"
             lineHeight="tall"
             color={detailsTextColor}
           >
-            {details}
+            {pick(details, language)}
           </Text>
         </Box>
 
@@ -220,10 +226,10 @@ const ProjectDetailPage = () => {
             boxShadow="md"
           >
             <Heading as="h3" size="lg" mb={4}>
-              Screenshots
+              {t('projectDetail.screenshotsTitle')}
             </Heading>
             <Text mb={6} color={screenshotsTextColor}>
-              Aperçu visuel du projet {title}
+              {t('projectDetail.screenshotsSubtitle')} {title}
             </Text>
 
             {project.screenshots && project.screenshots.length > 0 ? (
@@ -239,7 +245,7 @@ const ProjectDetailPage = () => {
               </SimpleGrid>
             ) : (
               <Text color={screenshotsTextColor} fontStyle="italic">
-                Aucun screenshot disponible pour ce projet.
+                {t('projectDetail.noScreenshots')}
               </Text>
             )}
           </Box>

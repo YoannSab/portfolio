@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import theme from './theme';
 import reportWebVitals from './reportWebVitals';
+import { LanguageProvider } from './i18n/LanguageContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,9 @@ root.render(
     <HashRouter>
       <ChakraProvider theme={theme}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        <App />
+        <LanguageProvider>
+          <App />
+        </LanguageProvider>
       </ChakraProvider>
     </HashRouter>
   </React.StrictMode>

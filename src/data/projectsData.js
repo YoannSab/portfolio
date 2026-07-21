@@ -1,8 +1,95 @@
 const projectsData = [
   {
+    id: 19,
+    title: "Néobanque",
+    description: {
+      fr: "Une banque en ligne avec un time-to-market de 8 mois et pouvant accueillir des millions d'utilisateurs.",
+      en: "An online bank with an 8-month time-to-market, able to serve millions of users.",
+    },
+    technologies: ["React Native", "TypeScript"],
+    imageUrl: "/images/neobanque.png",
+    projectType: "professional",
+    private: true,
+    year: 2026,
+    details: {
+      fr: "Développement et déploiement d'une application mobile bancaire sécurisée avec React Native, du prototype à la mise en production en 8 mois. Le projet respecte les exigences strictes de sécurité et de performance du secteur bancaire, avec une architecture pensée pour supporter des millions d'utilisateurs.",
+      en: "Development and deployment of a secure banking mobile application with React Native, from prototype to production in 8 months. The project meets the strict security and performance requirements of the banking sector, with an architecture designed to support millions of users.",
+    },
+  },
+  {
+    id: 18,
+    title: "Family Tree",
+    description: {
+      fr: "Une application web pour créer, explorer et enrichir des arbres généalogiques interactifs.",
+      en: "A web application to create, explore and enrich interactive family trees.",
+    },
+    technologies: ["JavaScript", "React.js", "Firebase", "face-api.js"],
+    imageUrl: "/images/family-tree.png",
+    screenshots: [
+      "/images/family-tree_screenshot1.png",
+      "/images/family-tree_screenshot2.png"
+    ],
+    githubUrl: "https://github.com/YoannSab/family-tree",
+    liveUrl: "https://geneatree.app",
+    featured: true,
+    projectType: "personal",
+    year: 2025,
+    details: {
+      fr: "Family Tree permet de construire dynamiquement des arbres généalogiques, de naviguer entre les générations, d'ajouter ou modifier des membres de la famille et de les rechercher via reconnaissance faciale. Développée avec React et Firebase, l'application combine une interface intuitive et responsive avec des fonctionnalités avancées comme le stockage cloud et l'analyse de visage.",
+      en: "Family Tree lets you dynamically build family trees, navigate between generations, add or edit family members and search them through facial recognition. Built with React and Firebase, the app combines an intuitive, responsive interface with advanced features such as cloud storage and face analysis.",
+    },
+  },
+  {
+    id: 17,
+    title: "Serveurs MCP",
+    description: {
+      fr: "Une architecture de serveurs Model-Context-Protocol facilitant l'intégration d'outils pour GitHub Copilot.",
+      en: "A Model-Context-Protocol server architecture that eases tool integration for GitHub Copilot.",
+    },
+    technologies: ["MCP", "Node.js", "TypeScript", "Python", "LLM"],
+    imageUrl: "/images/serveurs_mcp.png",
+    screenshots: [],
+    githubUrl: "",
+    liveUrl: "",
+    contribution: true,
+    private: true,
+    projectType: "professional",
+    year: 2025,
+    details: {
+      fr: "Ce projet implémente une suite de serveurs Model-Context-Protocol (MCP) permettant d'intégrer de la connaissance et des outils à GitHub Copilot.",
+      en: "This project implements a suite of Model-Context-Protocol (MCP) servers that integrate knowledge and tools into GitHub Copilot.",
+    },
+  },
+  {
+    id: 16,
+    title: "CVQuest",
+    description: {
+      fr: "Un outil de gestion de CV permettant aux entreprises de centraliser, rechercher et analyser les candidatures.",
+      en: "A resume management tool letting companies centralize, search and analyze applications.",
+    },
+    technologies: ["Java", "Spring Boot", "Next.js", "PostgreSQL"],
+    imageUrl: "/images/cvquest.png",
+    screenshots: [
+      "/images/cvquest_screenshot1.png"
+    ],
+    githubUrl: "",
+    liveUrl: "",
+    projectType: "professional",
+    private: true,
+    contribution: true,
+    year: 2025,
+    details: {
+      fr: "CVQuest est une application full-stack qui permet de parser des CV, d'analyser leur contenu et de gérer les candidats via une interface moderne. Elle offre des fonctionnalités de tagging, de favoris, de recherche intelligente et de mise à jour en temps réel. Le projet a été pensé pour les recruteurs et les équipes RH, avec un back-end Spring Boot et un front-end React performant.",
+      en: "CVQuest is a full-stack application that parses resumes, analyzes their content and manages candidates through a modern interface. It offers tagging, favorites, smart search and real-time updates. The project was designed for recruiters and HR teams, with a Spring Boot back-end and a high-performance React front-end.",
+    },
+  },
+  {
     id: 1,
     title: "Paroldle",
-    description: "Un jeu de devinettes de paroles de chansons inspiré par Wordle, développé en ReactJS.",
+    description: {
+      fr: "Un jeu de devinettes de paroles de chansons inspiré par Wordle, développé en ReactJS.",
+      en: "A song lyrics guessing game inspired by Wordle, built with ReactJS.",
+    },
     technologies: ["JavaScript", "React.js"],
     imageUrl: "/images/paroldle.png",
     screenshots: [
@@ -11,52 +98,76 @@ const projectsData = [
     githubUrl: "https://github.com/YoannSab/paroldle",
     liveUrl: "https://yoannsab.github.io/paroldle",
     featured: true,
-    projectType: "Projet Perso",
+    projectType: "personal",
     year: 2025,
-    details: "Paroldle est un jeu qui met au défi les joueurs de deviner des paroles de chansons populaires. Inspiré par le concept de Wordle, ce jeu propose une nouvelle énigme musicale chaque jour. Développé avec React, le projet inclut une base de données de chansons et un algorithme qui évalue la proximité des propositions du joueur avec la réponse correcte."
+    details: {
+      fr: "Paroldle est un jeu qui met au défi les joueurs de deviner des paroles de chansons populaires. Inspiré par le concept de Wordle, ce jeu propose une nouvelle énigme musicale chaque jour. Développé avec React, le projet inclut une base de données de chansons et un algorithme qui évalue la proximité des propositions du joueur avec la réponse correcte.",
+      en: "Paroldle challenges players to guess the lyrics of popular songs. Inspired by Wordle, it offers a new musical puzzle every day. Built with React, the project includes a song database and an algorithm that scores how close the player's guesses are to the correct answer.",
+    },
   },
   {
     id: 2,
     title: "Bibou Bot",
-    description: "Un bot Twitch développé en JavaScript permettant l'interaction avec le chat et l'affichage d'informations sur League of Legends.",
+    description: {
+      fr: "Un bot Twitch développé en JavaScript permettant l'interaction avec le chat et l'affichage d'informations sur League of Legends.",
+      en: "A JavaScript Twitch bot enabling chat interaction and displaying League of Legends information.",
+    },
     technologies: ["JavaScript", "Node.js", "Rest API"],
     imageUrl: "/images/biboubot.png",
     githubUrl: "https://github.com/YoannSab/bibou_bot",
     featured: true,
-    projectType: "Projet Perso",
+    projectType: "personal",
     year: 2023,
-    details: "Bibou Bot est un bot Twitch interactif qui met à disposition une vingtaine de commandes pour faire interagir le chat. Il récupère également des informations en temps réel sur les parties de League of Legends. Développé avec Node.js, ce bot utilise les API de Twitch et Riot Games pour améliorer l'expérience des spectateurs sur les streams."
+    details: {
+      fr: "Bibou Bot est un bot Twitch interactif qui met à disposition une vingtaine de commandes pour faire interagir le chat. Il récupère également des informations en temps réel sur les parties de League of Legends. Développé avec Node.js, ce bot utilise les API de Twitch et Riot Games pour améliorer l'expérience des spectateurs sur les streams.",
+      en: "Bibou Bot is an interactive Twitch bot providing around twenty commands to engage the chat. It also fetches real-time information about League of Legends games. Built with Node.js, the bot uses the Twitch and Riot Games APIs to enhance the viewer experience on streams.",
+    },
   },
   {
     id: 3,
     title: "Face Clustering",
-    description: "Projet d'analyse et de regroupement de visages utilisant des techniques de machine learning.",
+    description: {
+      fr: "Projet d'analyse et de regroupement de visages utilisant des techniques de machine learning.",
+      en: "A face analysis and clustering project using machine learning techniques.",
+    },
     technologies: ["Python", "Deep Learning", "Computer Vision"],
     imageUrl: "/images/face_clustering.png",
     githubUrl: "https://github.com/YoannSab/face_clustering",
     featured: true,
-    projectType: "Projet Perso",
+    projectType: "personal",
     year: 2023,
-    details: "Ce projet (pas tout à fait abouti) utilise des techniques avancées de machine learning pour détecter, extraire et regrouper automatiquement des visages dans une collection d'images. L'application utilise des algorithmes de clustering pour organiser les visages similaires ensemble, facilitant ainsi la gestion et l'organisation de grandes collections de photos. Développé avec Python et diverses bibliothèques de vision par ordinateur."
+    details: {
+      fr: "Ce projet (pas tout à fait abouti) utilise des techniques avancées de machine learning pour détecter, extraire et regrouper automatiquement des visages dans une collection d'images. L'application utilise des algorithmes de clustering pour organiser les visages similaires ensemble, facilitant ainsi la gestion et l'organisation de grandes collections de photos. Développé avec Python et diverses bibliothèques de vision par ordinateur.",
+      en: "This (not fully completed) project uses advanced machine learning techniques to automatically detect, extract and cluster faces within an image collection. The application relies on clustering algorithms to group similar faces together, making it easier to manage and organize large photo collections. Built with Python and various computer vision libraries.",
+    },
   },
   {
     id: 4,
     title: "Seahorse",
-    description: "Framework Python pour la création d'agent intelligent pour jeux de société.",
+    description: {
+      fr: "Framework Python pour la création d'agents intelligents pour jeux de société.",
+      en: "A Python framework for building intelligent agents for board games.",
+    },
     technologies: ["Python"],
     imageUrl: "/images/seahorse.png",
     githubUrl: "https://github.com/corail-research/seahorse",
     liveUrl: "https://corail-research.github.io/seahorse/",
     contribution: true,
-    projectType: "Projet Pro",
+    projectType: "professional",
     year: 2024,
-    details: "Seahorse est un framework et un librairie Python conçus pour faciliter la création d'agents intelligents capables de jouer à des jeux de société. La librairie standardise les interactions entre les agents et le jeu, permettant ainsi aux développeurs de se concentrer sur la logique d'IA. Seahorse est utilisé dans le cadre de projets de recherche et d'enseignement à Polytechnique Montréal."
+    details: {
+      fr: "Seahorse est un framework et une librairie Python conçus pour faciliter la création d'agents intelligents capables de jouer à des jeux de société. La librairie standardise les interactions entre les agents et le jeu, permettant ainsi aux développeurs de se concentrer sur la logique d'IA. Seahorse est utilisé dans le cadre de projets de recherche et d'enseignement à Polytechnique Montréal.",
+      en: "Seahorse is a Python framework and library designed to ease the creation of intelligent agents able to play board games. The library standardizes interactions between agents and the game, letting developers focus on the AI logic. Seahorse is used in research and teaching projects at Polytechnique Montréal.",
+    },
   },
   {
     id: 5,
     title: "Abyss",
-    description: "Site web de compétitions d'IA pour étudiants, permettant aux agents de s'affronter dans des jeux de société.",
-    technologies: ["JavaScript", "React.js", "Python", "Flask"],
+    description: {
+      fr: "Site web de compétitions d'IA pour étudiants, permettant aux agents de s'affronter dans des jeux de société.",
+      en: "An AI competition website for students, letting agents compete in board games.",
+    },
+    technologies: ["JavaScript", "React.js", "Python", "Flask", "PostgreSQL"],
     imageUrl: "/images/abyss.png",
     screenshots: [
       "/images/abyss_screenshot1.png",
@@ -65,14 +176,20 @@ const projectsData = [
     liveUrl: "https://abyss-h25.corail-lab.ca/",
     contribution: true,
     private: true,
-    projectType: "Projet Pro",
+    projectType: "professional",
     year: 2024,
-    details: "Abyss est un projet collaboratif créé par des étudiants en Msc à Polytechnique Montréal. Il s'agit d'une plateforme web qui permet aux agents intelligents des étudiants de s'affronter dans des jeux de société. Le site inclut un système de classement et une interface utilisateur intuitive pour suivre les performances des agents. Développé avec React.js pour le frontend et Flask pour le backend." 
+    details: {
+      fr: "Abyss est un projet collaboratif créé par des étudiants en M.Sc. à Polytechnique Montréal. Il s'agit d'une plateforme web qui permet aux agents intelligents des étudiants de s'affronter dans des jeux de société. Le site inclut un système de classement et une interface utilisateur intuitive pour suivre les performances des agents. Développé avec React.js pour le frontend et Flask pour le backend.",
+      en: "Abyss is a collaborative project created by M.Sc. students at Polytechnique Montréal. It is a web platform that lets students' intelligent agents compete in board games. The site includes a ranking system and an intuitive user interface to track agent performance. Built with React.js for the frontend and Flask for the backend.",
+    },
   },
   {
     id: 6,
     title: "Perkastor",
-    description: "Application web avec carte interactive montrant des faits historiques sur les lieux en France.",
+    description: {
+      fr: "Application web avec carte interactive montrant des faits historiques sur les lieux en France.",
+      en: "A web application with an interactive map showing historical facts about places in France.",
+    },
     technologies: ["Next.js", "Python", "TypeScript", "NLP"],
     imageUrl: "/images/perkastor.png",
     screenshots: [
@@ -80,14 +197,20 @@ const projectsData = [
     ],
     githubUrl: "https://github.com/YoannSab/perkastor",
     contribution: true,
-    projectType: "Projet Scolaire",
+    projectType: "school",
     year: 2023,
-    details: "Perkastor est une application web avec une carte interactive qui affiche des faits historiques sur divers lieux en France. Le projet a utilisé des algorithmes de traitement du langage naturel (NLP) pour extraire et traiter plus d'un million de faits depuis Wikipédia. Développé avec NextJS et Python."
+    details: {
+      fr: "Perkastor est une application web avec une carte interactive qui affiche des faits historiques sur divers lieux en France. Le projet a utilisé des algorithmes de traitement du langage naturel (NLP) pour extraire et traiter plus de 500 000 faits depuis Wikipédia. Développé avec Next.js et Python.",
+      en: "Perkastor is a web application with an interactive map displaying historical facts about various places in France. The project used natural language processing (NLP) algorithms to extract and process more than 500,000 facts from Wikipedia. Built with Next.js and Python.",
+    },
   },
   {
     id: 7,
     title: "Gustave le Fantôme",
-    description: "Jeu de plateformes en 2.5D où il faut prendre possession des assaillants pour défendre son manoir.",
+    description: {
+      fr: "Jeu de plateformes en 2.5D où il faut prendre possession des assaillants pour défendre son manoir.",
+      en: "A 2.5D platformer where you possess attackers to defend your mansion.",
+    },
     technologies: ["C#", "Unity"],
     imageUrl: "/images/gustave.png",
     screenshots: [
@@ -97,14 +220,20 @@ const projectsData = [
     githubUrl: "https://github.com/MatheoJ/GustaveTheGhost",
     liveUrl: "https://matheoj.github.io/GustaveTheGhostOnline/",
     contribution: true,
-    projectType: "Projet Scolaire",
+    projectType: "school",
     year: 2023,
-    details: "Gustave le Fantôme est un jeu de plateformes en 2.5D développé avec Unity et C#. Le joueur incarne un fantôme qui doit défendre son manoir en prenant possession des assaillants. Le jeu comprend différents types d'ennemis, un arbre de compétences et plusieurs niveaux. Le projet a été réalisé dans le cadre d'un cours de création de jeux à Polytechnique Montréal."
+    details: {
+      fr: "Gustave le Fantôme est un jeu de plateformes en 2.5D développé avec Unity et C#. Le joueur incarne un fantôme qui doit défendre son manoir en prenant possession des assaillants. Le jeu comprend différents types d'ennemis, un arbre de compétences et plusieurs niveaux. Le projet a été réalisé dans le cadre d'un cours de création de jeux à Polytechnique Montréal.",
+      en: "Gustave the Ghost is a 2.5D platformer built with Unity and C#. The player embodies a ghost who must defend his mansion by possessing attackers. The game features different enemy types, a skill tree and several levels. The project was made as part of a game creation course at Polytechnique Montréal.",
+    },
   },
   {
     id: 8,
     title: "Deliverif",
-    description: "Application interactive pour faciliter les livreurs dans leurs courses avec calcul de tournées et itinéraires optimisés.",
+    description: {
+      fr: "Application interactive pour aider les livreurs dans leurs courses avec calcul de tournées et itinéraires optimisés.",
+      en: "An interactive application to help delivery drivers with route planning and optimized itineraries.",
+    },
     technologies: ["Java"],
     imageUrl: "/images/deliverif.png",
     screenshots: [
@@ -112,14 +241,20 @@ const projectsData = [
     ],
     githubUrl: "https://github.com/MatheoJ/Deliverif",
     contribution: true,
-    projectType: "Projet Scolaire",
+    projectType: "school",
     year: 2022,
-    details: "Deliverif est une application Java développée avec Maven et JavaFX qui aide les livreurs à optimiser leurs tournées. Elle permet la planification des livraisons, le calcul d'itinéraires optimisés et le suivi des tournées. Ce projet a été réalisé en collaboration avec d'autres étudiants de l'INSA Lyon."
+    details: {
+      fr: "Deliverif est une application Java développée avec Maven et JavaFX qui aide les livreurs à optimiser leurs tournées. Elle permet la planification des livraisons, le calcul d'itinéraires optimisés et le suivi des tournées. Ce projet a été réalisé en collaboration avec d'autres étudiants de l'INSA Lyon.",
+      en: "Deliverif is a Java application built with Maven and JavaFX that helps delivery drivers optimize their routes. It allows delivery planning, optimized route computation and route tracking. This project was made in collaboration with other students from INSA Lyon.",
+    },
   },
   {
     id: 9,
     title: "Brain Atlas",
-    description: "Librairie Python pour le recalage d'images de cerveau de souris basé sur l'Allen Brain Atlas.",
+    description: {
+      fr: "Librairie Python pour le recalage d'images de cerveau de souris basé sur l'Allen Brain Atlas.",
+      en: "A Python library for mouse brain image registration based on the Allen Brain Atlas.",
+    },
     technologies: ["Python", "Computer Vision"],
     imageUrl: "/images/brainatlas.png",
     screenshots: [
@@ -127,14 +262,20 @@ const projectsData = [
       "/images/brainatlas_screenshot2.png",
     ],
     githubUrl: "https://gitlab.com/YoannSab/brainatlas",
-    projectType: "Projet Pro",
+    projectType: "professional",
     year: 2022,
-    details: "Brain Atlas est une librairie Python dédiée au recalage d'images de cerveau de souris en utilisant l'Allen Brain Atlas comme référence. Le projet inclut des fonctionnalités de segmentation et de détection des régions d'intérêt, facilitant ainsi la recherche neurologique. Développé dans un contexte professionnel."
+    details: {
+      fr: "Brain Atlas est une librairie Python dédiée au recalage d'images de cerveau de souris en utilisant l'Allen Brain Atlas comme référence. Le projet inclut des fonctionnalités de segmentation et de détection des régions d'intérêt, facilitant ainsi la recherche neurologique. Développé dans un contexte professionnel chez Inria.",
+      en: "Brain Atlas is a Python library dedicated to registering mouse brain images using the Allen Brain Atlas as reference. The project includes segmentation and region-of-interest detection features, facilitating neurological research. Developed in a professional context at Inria.",
+    },
   },
   {
     id: 10,
     title: "Skate Connecté",
-    description: "API Flask pour détecter les figures de skate en analysant des données temporelles d'accélération et de vitesses angulaires.",
+    description: {
+      fr: "API Flask pour détecter les figures de skate en analysant des données temporelles d'accélération et de vitesses angulaires.",
+      en: "A Flask API to detect skateboard tricks by analyzing time series of acceleration and angular velocity.",
+    },
     technologies: ["Python", "Machine Learning", "Deep Learning", "Traitement du Signal", "Flask", "React Native"],
     imageUrl: "/images/skate.png",
     screenshots: [
@@ -142,14 +283,20 @@ const projectsData = [
       "/images/skate_screenshot2.png",
     ],
     private: true,
-    projectType: "Projet Pro",
+    projectType: "professional",
     year: 2023,
-    details: "Ce projet consiste en une API Flask qui analyse les données temporelles d'accélération et de vitesses angulaires pour détecter et classifier les figures de skateboard. L'application utilise des techniques avancées de machine learning et de deep learning pour le traitement du signal, couplée à une interface mobile développée en React Native."
+    details: {
+      fr: "Ce projet consiste en une API Flask qui analyse les données temporelles d'accélération et de vitesses angulaires pour détecter et classifier les figures de skateboard. L'application utilise des techniques avancées de machine learning et de deep learning pour le traitement du signal, couplée à une interface mobile développée en React Native.",
+      en: "This project consists of a Flask API that analyzes time series of acceleration and angular velocity to detect and classify skateboard tricks. The application uses advanced machine learning and deep learning techniques for signal processing, coupled with a mobile interface built in React Native.",
+    },
   },
   {
     id: 11,
     title: "ScientIF",
-    description: "Moteur de recherche basé sur le web sémantique pour explorer les scientifiques, leurs découvertes et leurs domaines d'expertise.",
+    description: {
+      fr: "Moteur de recherche basé sur le web sémantique pour explorer les scientifiques, leurs découvertes et leurs domaines d'expertise.",
+      en: "A semantic-web search engine to explore scientists, their discoveries and their fields of expertise.",
+    },
     technologies: ["Web Sémantique", "HTML", "CSS", "Node.js"],
     imageUrl: "/images/scientif.png",
     screenshots: [
@@ -157,40 +304,58 @@ const projectsData = [
     ],
     githubUrl: "https://github.com/MatheoJ/ScientIF",
     contribution: true,
-    projectType: "Projet Scolaire",
+    projectType: "school",
     year: 2022,
-    details: "ScientIF est un moteur de recherche basé sur le web sémantique qui permet aux utilisateurs de rechercher des scientifiques et de naviguer à travers leurs découvertes, leurs prix et leurs domaines d'expertise. Le projet utilise des technologies web standards pour créer une interface intuitive et informative."
+    details: {
+      fr: "ScientIF est un moteur de recherche basé sur le web sémantique qui permet aux utilisateurs de rechercher des scientifiques et de naviguer à travers leurs découvertes, leurs prix et leurs domaines d'expertise. Le projet utilise des technologies web standards pour créer une interface intuitive et informative.",
+      en: "ScientIF is a semantic-web search engine that lets users search for scientists and browse their discoveries, awards and fields of expertise. The project uses standard web technologies to create an intuitive and informative interface.",
+    },
   },
   {
     id: 12,
     title: "PolyPwn",
-    description: "Création de 8 challenges de programmation, stéganographie et IA pour le PolyPwnCTF de Polytechnique Montréal.",
+    description: {
+      fr: "Création de 8 challenges de programmation, stéganographie et IA pour le PolyPwnCTF de Polytechnique Montréal.",
+      en: "Creation of 8 programming, steganography and AI challenges for Polytechnique Montréal's PolyPwnCTF.",
+    },
     technologies: ["Cybersécurité", "Python"],
     imageUrl: "/images/polypwn.png",
     githubUrl: "https://github.com/polycyber/PolyPwnCTF-2025-Challenges",
-    projectType: "Projet Perso",
+    projectType: "personal",
     contribution: true,
     year: 2025,
-    details: "Conception et développement de 8 défis variés pour le PolyPwnCTF, un événement de capture de drapeau organisé par Polytechnique Montréal. Les challenges couvrent des domaines comme la programmation, la stéganographie et l'intelligence artificielle, avec notamment l'utilisation de l'algorithme DBscan."
+    details: {
+      fr: "Conception et développement de 8 défis variés pour le PolyPwnCTF, un événement de capture de drapeau organisé par Polytechnique Montréal. Les challenges couvrent des domaines comme la programmation, la stéganographie et l'intelligence artificielle, avec notamment l'utilisation de l'algorithme DBSCAN.",
+      en: "Design and development of 8 varied challenges for PolyPwnCTF, a capture-the-flag event organized by Polytechnique Montréal. The challenges cover areas such as programming, steganography and artificial intelligence, notably using the DBSCAN algorithm.",
+    },
   },
   {
     id: 13,
     title: "Conv Fighter",
-    description: "Petit jeu de plateforme développé avec Pygame pour s'initier à Python.",
+    description: {
+      fr: "Petit jeu de plateforme développé avec Pygame pour s'initier à Python.",
+      en: "A small platformer built with Pygame to learn Python.",
+    },
     technologies: ["Python"],
     imageUrl: "/images/convfighter.png",
     screenshots: [
       "/images/convfighter_screenshot1.png",
     ],
     githubUrl: "https://github.com/YoannSab/ConvFighter",
-    projectType: "Projet Perso",
+    projectType: "personal",
     year: 2021,
-    details: "Conv Fighter est un petit jeu de plateforme développé avec la bibliothèque Pygame. Ce projet a été réalisé dans le but d'apprendre en autodidacte le langage Python et de se familiariser avec la création de jeux vidéo. Le jeu propose des mécaniques simples et un design minimaliste, tout en offrant une expérience ludique."
+    details: {
+      fr: "Conv Fighter est un petit jeu de plateforme développé avec la bibliothèque Pygame. Ce projet a été réalisé dans le but d'apprendre en autodidacte le langage Python et de se familiariser avec la création de jeux vidéo. Le jeu propose des mécaniques simples et un design minimaliste, tout en offrant une expérience ludique.",
+      en: "Conv Fighter is a small platformer built with the Pygame library. This project was made to self-teach Python and get familiar with video game creation. The game offers simple mechanics and a minimalist design while providing a fun experience.",
+    },
   },
   {
     id: 14,
     title: "Déformation Élastique",
-    description: "Simulation numérique d'une lame élastique soumise à son poids, des forces d'extrémité et des formes réparties.",
+    description: {
+      fr: "Simulation numérique d'une lame élastique soumise à son poids, des forces d'extrémité et des charges réparties.",
+      en: "Numerical simulation of an elastic blade subject to its weight, end forces and distributed loads.",
+    },
     technologies: ["MATLAB", "Simulation Numérique"],
     imageUrl: "/images/deformation.png",
     screenshots: [
@@ -198,14 +363,20 @@ const projectsData = [
       "/images/deformation_screenshot2.png",
     ],
     githubUrl: "https://gitlab.com/YoannSab/deformationElastique",
-    projectType: "Projet Scolaire",
+    projectType: "school",
     year: 2021,
-    details: "Ce projet consiste en une simulation numérique d'une lame élastique soumise à diverses forces. La méthode de Newton-Raphson a été implémentée pour résoudre les équations différentielles décrivant le comportement de la lame. Réalisé avec MATLAB dans le cadre d'un projet scolaire."
+    details: {
+      fr: "Ce projet consiste en une simulation numérique d'une lame élastique soumise à diverses forces. La méthode de Newton-Raphson a été implémentée pour résoudre les équations différentielles décrivant le comportement de la lame. Réalisé avec MATLAB dans le cadre d'un projet scolaire.",
+      en: "This project consists of a numerical simulation of an elastic blade subject to various forces. The Newton-Raphson method was implemented to solve the differential equations describing the blade's behavior. Made with MATLAB as part of a school project.",
+    },
   },
   {
     id: 15,
     title: "Lancer de balle",
-    description: "Simulation d'un lancer de balle avec prise en compte de la résistance de l'air.",
+    description: {
+      fr: "Simulation d'un lancer de balle avec prise en compte de la résistance de l'air.",
+      en: "Simulation of a ball throw taking air resistance into account.",
+    },
     technologies: ["Java", "Simulation Numérique"],
     year: 2021,
     githubUrl: "https://github.com/YoannSab/LancerBalle",
@@ -214,8 +385,11 @@ const projectsData = [
       "/images/lancerballe_screenshot1.png",
     ],
     contribution: true,
-    projectType: "Projet Scolaire",
-    details: "Ce projet consiste en la simulation d'un lancer de balle (tennis, ping-pong, etc.) dans différents environnements (sur Terre, sur la Lune, dans l'eau, etc.) et avec différentes conditions (angle de lancement, vitesse initiale, etc.). La simulation prend en compte la résistance de l'air et d'autres forces pour modéliser le mouvement de la balle. Réalisé avec Java dans le cadre d'un projet scolaire."
+    projectType: "school",
+    details: {
+      fr: "Ce projet consiste en la simulation d'un lancer de balle (tennis, ping-pong, etc.) dans différents environnements (sur Terre, sur la Lune, dans l'eau, etc.) et avec différentes conditions (angle de lancement, vitesse initiale, etc.). La simulation prend en compte la résistance de l'air et d'autres forces pour modéliser le mouvement de la balle. Réalisé avec Java dans le cadre d'un projet scolaire.",
+      en: "This project simulates a ball throw (tennis, ping-pong, etc.) in different environments (on Earth, on the Moon, in water, etc.) and under various conditions (launch angle, initial speed, etc.). The simulation accounts for air resistance and other forces to model the ball's motion. Made with Java as part of a school project.",
+    },
   }
 ];
 

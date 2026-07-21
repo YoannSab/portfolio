@@ -27,10 +27,12 @@ import {
   MoonIcon,
   SunIcon,
 } from '@chakra-ui/icons';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const { t, language, toggleLanguage } = useLanguage();
   const location = useLocation();
   
   // Move useColorModeValue calls to the component level
@@ -87,7 +89,7 @@ const Header = () => {
             </Link>
 
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-              <DesktopNav pathname={location.pathname} />
+              <DesktopNav pathname={location.pathname} t={t} />
             </Flex>
           </Flex>
 
@@ -95,7 +97,14 @@ const Header = () => {
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
-            spacing={6}>
+            spacing={{ base: 2, md: 4 }}>
+            <Button
+              onClick={toggleLanguage}
+              variant="ghost"
+              fontWeight="bold"
+              aria-label={t('nav.toggleLanguage')}>
+              {language === 'fr' ? 'EN' : 'FR'}
+            </Button>
             <Button onClick={toggleColorMode} variant="ghost">
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
@@ -103,14 +112,14 @@ const Header = () => {
         </Flex>
 
         <Collapse in={isOpen} animateOpacity>
-          <MobileNav />
+          <MobileNav t={t} />
         </Collapse>
       </Container>
     </Box>
   );
 };
 
-const DesktopNav = ({ pathname }) => {
+const DesktopNav = ({ pathname, t }) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('brand.600', 'brand.300');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
@@ -118,7 +127,7 @@ const DesktopNav = ({ pathname }) => {
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.navKey}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Link
@@ -132,7 +141,7 @@ const DesktopNav = ({ pathname }) => {
                   textDecoration: 'none',
                   color: linkHoverColor,
                 }}>
-                {navItem.label}
+                {t('nav.' + navItem.navKey)}
               </Link>
             </PopoverTrigger>
 
@@ -196,23 +205,23 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ t }) => {
   // Move useColorModeValue call to the component level
   const bgColor = useColorModeValue('white', 'gray.800');
-  
+
   return (
     <Stack
       bg={bgColor}
       p={4}
       display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.navKey} {...navItem} t={t} />
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, children, href }) => {
+const MobileNavItem = ({ navKey, children, href, t }) => {
   const { isOpen, onToggle } = useDisclosure();
   // Move useColorModeValue calls to the component level
   const textColor = useColorModeValue('gray.600', 'gray.200');
@@ -232,7 +241,7 @@ const MobileNavItem = ({ label, children, href }) => {
         <Text
           fontWeight={600}
           color={textColor}>
-          {label}
+          {t('nav.' + navKey)}
         </Text>
         {children && (
           <Icon
@@ -267,15 +276,15 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Accueil',
+    navKey: 'home',
     href: '/',
   },
   {
-    label: 'Projets',
+    navKey: 'projects',
     href: '/projects',
   },
   {
-    label: 'CV',
+    navKey: 'resume',
     href: '/resume',
   },
 ];

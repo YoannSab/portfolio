@@ -15,10 +15,11 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaDatabase, FaLaptopCode, FaRobot, FaServer } from 'react-icons/fa';
+import { FaArrowRight, FaMobileAlt, FaLaptopCode, FaRobot, FaProjectDiagram } from 'react-icons/fa';
 import projectsData from '../data/projectsData';
 import resumeData from '../data/resumeData';
 import ProjectCard from '../components/ProjectCard';
+import { useLanguage, pick } from '../i18n/LanguageContext';
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
@@ -26,6 +27,7 @@ const MotionText = motion(Text);
 const MotionFlex = motion(Flex);
 
 const HomePage = () => {
+  const { t, language } = useLanguage();
   const featuredProjects = projectsData.filter(project => project.featured).slice(0, 3);
   const textColor = useColorModeValue('gray.600', 'gray.400');
   const boxBgColor = useColorModeValue('white', 'gray.700');
@@ -67,14 +69,14 @@ const HomePage = () => {
                 mb={6}
                 color={textColor}
               >
-                Ingénieur IA & Développeur Web
+                {t('home.subtitle')}
               </MotionText>
               <MotionText
                 fontSize="md"
                 mb={6}
                 color={textColor}
               >
-                Passionné par l'application des technologies d'intelligence artificielle dans les applications et logiciels du quotidien, je combine expertise technique en développement et connaissances en IA pour créer des solutions innovantes et performantes.
+                {t('home.heroDescription')}
               </MotionText>
 
               <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
@@ -87,7 +89,7 @@ const HomePage = () => {
                   _hover={{ bg: 'brand.600' }}
                   rightIcon={<FaArrowRight />}
                 >
-                  Voir mes projets
+                  {t('home.viewProjects')}
                 </Button>
               </Stack>
             </MotionBox>
@@ -129,21 +131,21 @@ const HomePage = () => {
               transition={{ duration: 0.5 }}
             >
               <Heading as="h2" size="xl" mb={6}>
-                À propos de moi
+                {t('home.aboutTitle')}
               </Heading>
               <Text fontSize="lg" mb={8} color={textColor} lineHeight="tall">
-                Ingénieur diplômé de l'INSA Lyon et titulaire d'une maîtrise de recherche de Polytechnique Montréal, je combine des compétences pointues en intelligence artificielle avec une solide expertise en développement web et logiciel.
+                {t('home.aboutText')}
               </Text>
 
               <Box mb={10}>
                 <Heading as="h3" size="lg" mb={6}>
-                  Mon parcours
+                  {t('home.journeyTitle')}
                 </Heading>
                 <Text fontSize="lg" lineHeight="tall" mb={4} color={textColor}>
-                  Mon parcours académique et professionnel m'a permis de développer une double expertise en IA et en développement web, avec une vision claire de comment ces deux domaines peuvent s'enrichir mutuellement.
+                  {t('home.journeyText1')}
                 </Text>
                 <Text fontSize="lg" lineHeight="tall" color={textColor}>
-                  Aujourd'hui, je me spécialise dans l'intégration de solutions d'intelligence artificielle dans des applications web et logiciels, pour créer des expériences utilisateur intelligentes et des outils d'analyse de données performants.
+                  {t('home.journeyText2')}
                 </Text>
               </Box>
             </MotionBox>
@@ -154,28 +156,28 @@ const HomePage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <Heading as="h3" size="lg" mb={6}>
-                Mes centres d'intérêt
+                {t('home.interestsTitle')}
               </Heading>
               <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={8}>
                 <FeatureBox
                   icon={FaRobot}
-                  title="Intelligence Artificielle"
-                  description="Conception et déploiement de modèles d'IA dans des applications concrètes"
+                  title={t('home.features.ai.title')}
+                  description={t('home.features.ai.description')}
+                />
+                <FeatureBox
+                  icon={FaMobileAlt}
+                  title={t('home.features.mobile.title')}
+                  description={t('home.features.mobile.description')}
+                />
+                <FeatureBox
+                  icon={FaProjectDiagram}
+                  title={t('home.features.research.title')}
+                  description={t('home.features.research.description')}
                 />
                 <FeatureBox
                   icon={FaLaptopCode}
-                  title="Développement Web"
-                  description="Création d'applications web modernes et réactives"
-                />
-                <FeatureBox
-                  icon={FaDatabase}
-                  title="Science des Données"
-                  description="Analyse et visualisation de données complexes"
-                />
-                <FeatureBox
-                  icon={FaServer}
-                  title="Intégration IA-Web"
-                  description="Connexion des modèles d'IA avec des interfaces utilisateur intuitives"
+                  title={t('home.features.fullstack.title')}
+                  description={t('home.features.fullstack.description')}
                 />
               </SimpleGrid>
             </MotionBox>
@@ -189,7 +191,7 @@ const HomePage = () => {
           <VStack spacing={12}>
             <Box textAlign="center">
               <Heading as="h2" size="xl">
-                Projets à la une
+                {t('home.featuredProjects')}
               </Heading>
             </Box>
 
@@ -207,7 +209,7 @@ const HomePage = () => {
               colorScheme="brand"
               rightIcon={<FaArrowRight />}
             >
-              Voir tous les projets
+              {t('home.viewAllProjects')}
             </Button>
           </VStack>
         </Container>
@@ -218,7 +220,7 @@ const HomePage = () => {
         <Container maxW="container.xl">
           <Box mb={8}>
             <Heading as="h2" size="xl" mb={8} textAlign="center">
-              Parcours académique
+              {t('home.academicPath')}
             </Heading>
           </Box>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
@@ -234,16 +236,16 @@ const HomePage = () => {
                 bg={boxBgColor}
               >
                 <Heading as="h3" size="md" mb={2}>
-                  {edu.degree}
+                  {pick(edu.degree, language)}
                 </Heading>
                 <Text fontWeight="bold" color="brand.500" mb={2}>
                   {edu.institution}
                 </Text>
                 <Text mb={2} fontSize="sm">
-                  {edu.location} | {edu.period}
+                  {pick(edu.location, language)} | {edu.period}
                 </Text>
                 <Text color={textColor}>
-                  {edu.description}
+                  {pick(edu.description, language)}
                 </Text>
               </MotionBox>
             ))}
