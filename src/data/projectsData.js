@@ -46,7 +46,7 @@ const projectsData = [
       fr: "Une architecture de serveurs Model-Context-Protocol facilitant l'intégration d'outils pour GitHub Copilot.",
       en: "A Model-Context-Protocol server architecture that eases tool integration for GitHub Copilot.",
     },
-    technologies: ["MCP", "Node.js", "TypeScript", "Python", "LLM"],
+    technologies: ["MCP", "Node.js", "TypeScript", "Python", "LLM", "Docker"],
     imageUrl: "/images/serveurs_mcp.png",
     screenshots: [],
     githubUrl: "",
@@ -67,7 +67,7 @@ const projectsData = [
       fr: "Un outil de gestion de CV permettant aux entreprises de centraliser, rechercher et analyser les candidatures.",
       en: "A resume management tool letting companies centralize, search and analyze applications.",
     },
-    technologies: ["Java", "Spring Boot", "Next.js", "PostgreSQL"],
+    technologies: ["Java", "Spring Boot", "Next.js", "PostgreSQL", "Microsoft Azure", "Terraform", "Docker"],
     imageUrl: "/images/cvquest.png",
     screenshots: [
       "/images/cvquest_screenshot1.png"
@@ -79,8 +79,8 @@ const projectsData = [
     contribution: true,
     year: 2025,
     details: {
-      fr: "CVQuest est une application full-stack qui permet de parser des CV, d'analyser leur contenu et de gérer les candidats via une interface moderne. Elle offre des fonctionnalités de tagging, de favoris, de recherche intelligente et de mise à jour en temps réel. Le projet a été pensé pour les recruteurs et les équipes RH, avec un back-end Spring Boot et un front-end React performant.",
-      en: "CVQuest is a full-stack application that parses resumes, analyzes their content and manages candidates through a modern interface. It offers tagging, favorites, smart search and real-time updates. The project was designed for recruiters and HR teams, with a Spring Boot back-end and a high-performance React front-end.",
+      fr: "CVQuest est une application full-stack qui permet de parser des CV, d'analyser leur contenu et de gérer les candidats via une interface moderne. Elle offre des fonctionnalités de tagging, de favoris, de recherche intelligente et de mise à jour en temps réel. Le projet a été pensé pour les recruteurs et les équipes RH, avec un back-end Spring Boot et un front-end React. J'ai déployé le back-end sur Microsoft Azure avec Docker et Terraform.",
+      en: "CVQuest is a full-stack application that parses resumes, analyzes their content and manages candidates through a modern interface. It offers tagging, favorites, smart search and real-time updates. The project was designed for recruiters and HR teams, with a Spring Boot back-end and a high-performance React front-end. I deployed the back-end to Microsoft Azure using Docker and Terraform.",
     },
   },
   {
@@ -167,7 +167,7 @@ const projectsData = [
       fr: "Site web de compétitions d'IA pour étudiants, permettant aux agents de s'affronter dans des jeux de société.",
       en: "An AI competition website for students, letting agents compete in board games.",
     },
-    technologies: ["JavaScript", "React.js", "Python", "Flask", "PostgreSQL"],
+    technologies: ["JavaScript", "React.js", "Python", "Flask", "PostgreSQL", "Docker"],
     imageUrl: "/images/abyss.png",
     screenshots: [
       "/images/abyss_screenshot1.png",
